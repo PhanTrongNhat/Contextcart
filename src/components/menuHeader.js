@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Navbar from 'react-bootstrap/Navbar';
-
+import Context from '../contexts/AppContext'
 export default function navbar(){
     return(
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -23,7 +23,11 @@ export default function navbar(){
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Cart(0)</Nav.Link>
+            <Context.Consumer>
+              {({Cart})=>  <Nav.Link href="#deets">Cart({Cart.length})</Nav.Link>}
+          
+            </Context.Consumer>
+            
             <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link>

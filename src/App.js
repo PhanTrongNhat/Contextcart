@@ -11,12 +11,11 @@ function App() {
         <HeaderMenu/>   
         <div className="test">
           <ListCart >
-          
+           
+            
           </ListCart>
-        </div>
-      
-    
-                <Cart></Cart>
+        </div>  
+          <Cart></Cart>
       </AppProvider>     
      );
 }
